@@ -91,15 +91,23 @@
             <a href="about.html">About us</a>
     </nav>
 
-    <section style="background-image: url('images/Home1.jpg')">
-        <div class="content-outer">
-            <div class="content">
-                <h3>ETYTECH</h3>
-                <h2>Industry Intelligence Promoter</h2>
-                <a href=""><span>Learn more</span></a>
-            </div>
+<!-- 将原来的 section 替换为以下代码 -->
+<section class="video-section">
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="images/home1v.MP4" type="video/mp4">
+        <!-- 备用：如果视频无法播放，显示原图片 -->
+        Your browser does not support the video tag.
+    </video>
+    <!-- 可选：添加一个半透明遮罩层，让文字更清晰 -->
+    <div class="video-overlay"></div>
+    <div class="content-outer">
+        <div class="content">
+            <h3>ETYTECH</h3>
+            <h2>Industry Intelligence Promoter</h2>
+            <a href=""><span>Learn more</span></a>
         </div>
-    </section> 
+    </div>
+</section>
 
 
     <section style="background-image: url('images/Home2.jpg')">
