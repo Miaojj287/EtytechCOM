@@ -233,25 +233,33 @@ section div.content a:hover span{
     color:#000;
 }
 
+/* 修复的 Service 页面样式 */
 .fullscreen-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    padding: 0 20px; /* 避免小屏幕文字贴边 */
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    position: relative;
 }
 
 .service-content {
     text-align: center;
     color: white;
     max-width: 80%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
 .service-content h3 {
     font-size: 3em;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     font-family: D-DIN-Bold, Arial, sans-serif;
 }
 
@@ -259,6 +267,34 @@ section div.content a:hover span{
     font-size: 1.5em;
     line-height: 1.6;
     font-family: D-DIN-Regular, Arial, sans-serif;
+    margin: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .service-content h3 {
+        font-size: 2em;
+    }
+    
+    .service-content p {
+        font-size: 1.2em;
+    }
+    
+    .service-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-content h3 {
+        font-size: 1.5em;
+    }
+    
+    .service-content p {
+        font-size: 1em;
+    }
 }
 
 footer{
