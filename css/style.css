@@ -240,23 +240,25 @@ section div.content a:hover span{
     height: 100vh;
     background-size: cover;
     background-position: center;
+    padding: 0 20px; /* 避免小屏幕文字贴边 */
 }
 
-.fullscreen-section .content {
+.service-content {
     text-align: center;
     color: white;
     max-width: 80%;
 }
 
-.fullscreen-section .content h3 {
-    font-size: 3em; /* 加大标题字号 */
+.service-content h3 {
+    font-size: 3em;
     margin-bottom: 20px;
-    font-weight: bold;
+    font-family: D-DIN-Bold, Arial, sans-serif;
 }
 
-.fullscreen-section .content p {
-    font-size: 1.5em; /* 正文加大两号 */
+.service-content p {
+    font-size: 1.5em;
     line-height: 1.6;
+    font-family: D-DIN-Regular, Arial, sans-serif;
 }
 
 footer{
