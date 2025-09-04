@@ -233,6 +233,32 @@ section div.content a:hover span{
     color:#000;
 }
 
+.fullscreen-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.fullscreen-section .content {
+    text-align: center;
+    color: white;
+    max-width: 80%;
+}
+
+.fullscreen-section .content h3 {
+    font-size: 3em; /* 加大标题字号 */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.fullscreen-section .content p {
+    font-size: 1.5em; /* 正文加大两号 */
+    line-height: 1.6;
+}
+
 footer{
     padding: 50px;
     font-size: 12px;
