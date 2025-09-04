@@ -180,11 +180,12 @@ section div.content-outer{
     margin: 0 auto;
     position: relative;
 }
-section.active div.content{
+/* 只对主页的 section 应用动画效果，不影响 service 页面 */
+section:not(.fullscreen-section).active div.content{
     opacity: 1;
     bottom:15vh;
 }
-section div.content{
+section:not(.fullscreen-section) div.content{
     position: absolute;
     left: 50px;
     max-width: 360px;

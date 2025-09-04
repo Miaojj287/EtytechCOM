@@ -18,7 +18,8 @@ function toggle() {
 const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (section) {
       if (section.isIntersecting) {
-        section.target.className = 'active';
+        // 修复：使用 classList.add 而不是直接覆盖 className
+        section.target.classList.add('active');
       }
     });
   }, {threshold: .8});
