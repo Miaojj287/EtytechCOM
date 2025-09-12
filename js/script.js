@@ -48,3 +48,91 @@ const observer = new IntersectionObserver(function (entries) {
         lastScrollTop = scrollTop;
     });
 });
+
+// Product Page Scroll Interactions
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Title fade effect
+    const titleSection = document.querySelector('.module-title-section');
+    const contentSections = document.querySelectorAll('.content-section');
+    
+    // Intersection Observer for title fade
+    const titleObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio < 0.2) {
+                entry.target.classList.add('fade-out');
+            } else {
+                entry.target.classList.remove('fade-out');
+            }
+        });
+    }, {
+        threshold: [0, 0.2, 0.5, 1]
+    });
+    
+    if (titleSection) {
+        titleObserver.observe(titleSection);
+    }
+    
+    // Intersection Observer for content sections
+    const contentObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // Trigger feature animations when section is visible
+                const features = entry.target.querySelectorAll('.feature-item');
+                features.forEach((feature, index) => {
+                    setTimeout(() => {
+                        feature.style.animationPlayState = 'running';
+                    }, index * 100);
+                });
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    contentSections.forEach(section => {
+        contentObserver.observe(section);
+    });
+    
+    // Image carousel interaction for Cherry Studio
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImage = document.querySelector('.main-image img');
+    
+    thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            const tempSrc = mainImage.src;
+            mainImage.src = this.src;
+            this.src = tempSrc;
+            
+            // Add transition effect
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.style.opacity = '1';
+            }, 100);
+        });
+    });
+    
+    // Parallax effect for product numbers
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const productNumbers = document.querySelectorAll('.product-number');
+        
+        productNumbers.forEach(number => {
+            const rate = scrolled * -0.3;
+            number.style.transform = `translateY(${rate}px)`;
+        });
+    });
+    
+    // Smooth scroll for scroll indicator
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            const firstContent = document.querySelector('.content-section');
+            if (firstContent) {
+                firstContent.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
