@@ -10,14 +10,73 @@
 html, body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 body{
     background-color: #000;
     color: #fff;
     font-family: D-DIN-Bold,Arial,Verdana,sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+body.loaded {
+    opacity: 1;
 }
 a{
     color: #fff;
+}
+
+/* ==========================================
+   Single Page Application Styles
+   ========================================== */
+#page-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.page-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.page-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Page Transition Animations */
+.page-content.page-exit {
+    animation: pageExitAnimation 0.6s ease-out forwards;
+}
+
+.page-content.page-enter {
+    animation: pageEnterAnimation 0.6s ease-out forwards;
+}
+
+@keyframes pageExitAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.98);
+    }
+}
+
+@keyframes pageEnterAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 header{
@@ -27,8 +86,18 @@ header{
     padding: 12px 50px;
     height: 40px;
     position: fixed;
-    top:0;
-    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 70%, transparent 100%);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 header svg{
     width: 140px;
@@ -64,37 +133,56 @@ header a.logo{
     text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
-    padding: 0px;
-    margin: 0 14px;
+    padding: 8px 16px;
+    margin: 0 8px;
     position: relative;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .center_nav a:before{
     content: '';
     width: 0;
-    right:0;
-    bottom: -2px;;
-    height: 1px;
-    background-color: #fff;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f4e900, transparent);
     position: absolute;
-    transition: width .2s linear;
+    transition: width 0.3s ease;
 }
-.center_nav a:hover:before{
+
+.center_nav a:hover:before,
+.center_nav a.active:before {
     right: initial;
     left: 0;
     width: 100%;
 }
 
+.center_nav a.active {
+    background: rgba(244, 233, 0, 0.1);
+    color: #f4e900;
+}
+
+.center_nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .right_nav{
-    position:fixed;
-    z-index: 3;
-    right:6px;
-    top:8px;
-    color:#fff;
+    position: fixed;
+    z-index: 1001;
+    right: 6px;
+    top: 8px;
+    color: #fff;
     padding: 20px;
-    background-color:transparent;
-    border:0;
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.right_nav.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 .right_nav span{
     display:block;
@@ -138,7 +226,7 @@ nav.mobile_nav.active{
     right:0;
 }
 nav.mobile_nav a{
-    display:block;
+    display: block;
     opacity: 0;
     border-bottom: 1px solid #222;
     text-transform: uppercase;
@@ -146,11 +234,32 @@ nav.mobile_nav a{
     text-decoration: none;
     text-align: right;
     font-family: D-DIN-Regular, sans-serif;
-    transition: opacity .3s linear;
-    transition-delay: .2s;
+    transition: opacity 0.3s linear, background 0.3s ease;
+    transition-delay: 0.2s;
+    position: relative;
 }
+
 nav.mobile_nav.active a{
-    opacity:1;
+    opacity: 1;
+}
+
+nav.mobile_nav a.active {
+    background: rgba(244, 233, 0, 0.1);
+    color: #f4e900;
+}
+
+nav.mobile_nav a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #f4e900;
+}
+
+nav.mobile_nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 nav.mobile_nav a:nth-child(2){transition-delay: .25s;}
 nav.mobile_nav a:nth-child(3){transition-delay: .3s;}
@@ -382,6 +491,9 @@ footer{
     padding: 50px;
     font-size: 12px;
     font-family: D-DIN-Regular, sans-serif;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 30%);
+    position: relative;
+    z-index: 10;
 }
 footer nav{
     text-align: center;
@@ -1786,6 +1898,98 @@ header, .right_nav {
     border-radius: 20px;
     font-size: 0.9em;
     color: #f4e900;
+}
+
+/* ==========================================
+   Loading and Fade Effects
+   ========================================== */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.scale-in {
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   Smooth Scrolling
+   ========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   Enhanced Hover Effects
+   ========================================== */
+a, button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus, button:focus {
+    outline: 2px solid rgba(244, 233, 0, 0.5);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Improved Accessibility
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .page-content {
+        transition: none !important;
+    }
+}
+
+/* ==========================================
+   Loading Spinner (Optional)
+   ========================================== */
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(244, 233, 0, 0.3);
+    border-top-color: #f4e900;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 /* Responsive Design for Product Page */

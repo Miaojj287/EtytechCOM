@@ -3,81 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etytech Studio</title>
+    <title>Etytech Studio - Industry Intelligence Promoter</title>
+    <meta name="description" content="Etytech Studio - AI, Website, Software & Hardware Customization Services">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <!-- the logo in the top of the website -->
-        <a href="" class="logo">
-        <svg version="1.1" id="etytech_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 821.34 103.29">
-            <title>etytech Logo</title>
-            <defs>
-              <style>
-                .cls-1 {
-                  fill: #565454;
-                }
-                .cls-1, .cls-2 {
-                  stroke-width: 0px;
-                }
-                .cls-2 {
-                  fill: #f4e900;
-                }
-              </style>
-            </defs>
-            
-            <!-- E -->
-            <g class="letter_e">
-              <polygon class="cls-1" points="0 21.7 93.72 21.7 93.72 2.56 19.14 2.56 0 21.7"/>
-              <rect class="cls-1" y="44.14" width="93.72" height="19.14"/>
-              <polygon class="cls-1" points="19.14 103.29 93.72 103.29 93.72 84.15 0 84.15 19.14 103.29"/>
-            </g>
-            
-            <!-- T -->
-            <g class="letter_t">
-              <polygon class="cls-1" points="221.99 12.13 212.42 2.56 133.11 2.56 123.54 12.13 133.11 21.7 163.2 21.7 163.2 93.72 172.77 103.29 182.34 93.72 182.34 21.7 212.42 21.7 221.99 12.13"/>
-            </g>
-            
-            <!-- Y -->
-            <g class="letter_y">
-              <polygon class="cls-1" points="292.51 40.78 292.46 40.83 292.46 93.72 302.03 103.29 311.6 93.72 311.6 40.96 353.83 16.57 357.33 3.5 344.26 0 302.21 24.28 260.16 0 247.08 3.5 250.59 16.57 292.51 40.78"/>
-            </g>
-            
-            <!-- T (Yellow) -->
-            <g class="letter_t_yellow">
-              <polygon class="cls-2" points="410.28 93.72 419.85 103.29 429.42 93.72 429.42 21.7 459.51 21.7 469.08 12.13 459.51 2.56 380.2 2.56 370.63 12.13 380.2 21.7 410.28 21.7 410.28 93.72"/>
-            </g>
-            
-            <!-- E -->
-            <g class="letter_e">
-              <polygon class="cls-1" points="587.89 2.56 513.31 2.56 494.17 21.7 587.89 21.7 587.89 2.56"/>
-              <rect class="cls-1" x="494.17" y="44.14" width="93.72" height="19.14"/>
-              <polygon class="cls-1" points="587.89 103.29 587.89 84.15 494.17 84.15 513.31 103.29 587.89 103.29"/>
-            </g>
-            
-            <!-- C -->
-            <g class="letter_c">
-              <polygon class="cls-1" points="811.77 .24 802.2 9.81 802.2 39.33 760.39 39.33 760.39 9.81 750.82 .24 741.25 9.81 741.25 103.29 760.39 84.15 760.39 58.47 802.2 58.47 802.2 84.15 802.2 84.15 802.2 84.15 821.34 103.29 821.34 39.33 821.34 9.81 811.77 .24"/>
-            </g>
-            
-            <!-- H -->
-            <g class="letter_h">
-              <polygon class="cls-1" points="711.43 21.7 692.3 2.56 617.71 2.56 617.71 6.85 617.71 21.7 617.71 84.15 617.71 100.58 617.71 103.29 692.3 103.29 711.43 84.15 636.85 84.15 636.85 21.7 711.43 21.7"/>
-            </g>
-          </svg>
+        <a href="/" class="logo" onclick="navigateTo('home', event); return false;">
+            <svg version="1.1" id="etytech_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 821.34 103.29">
+                <title>etytech Logo</title>
+                <defs>
+                    <style>
+                        .cls-1 { fill: #565454; }
+                        .cls-1, .cls-2 { stroke-width: 0px; }
+                        .cls-2 { fill: #f4e900; }
+                    </style>
+                </defs>
+                <g class="letter_e">
+                    <polygon class="cls-1" points="0 21.7 93.72 21.7 93.72 2.56 19.14 2.56 0 21.7"/>
+                    <rect class="cls-1" y="44.14" width="93.72" height="19.14"/>
+                    <polygon class="cls-1" points="19.14 103.29 93.72 103.29 93.72 84.15 0 84.15 19.14 103.29"/>
+                </g>
+                <g class="letter_t">
+                    <polygon class="cls-1" points="221.99 12.13 212.42 2.56 133.11 2.56 123.54 12.13 133.11 21.7 163.2 21.7 163.2 93.72 172.77 103.29 182.34 93.72 182.34 21.7 212.42 21.7 221.99 12.13"/>
+                </g>
+                <g class="letter_y">
+                    <polygon class="cls-1" points="292.51 40.78 292.46 40.83 292.46 93.72 302.03 103.29 311.6 93.72 311.6 40.96 353.83 16.57 357.33 3.5 344.26 0 302.21 24.28 260.16 0 247.08 3.5 250.59 16.57 292.51 40.78"/>
+                </g>
+                <g class="letter_t_yellow">
+                    <polygon class="cls-2" points="410.28 93.72 419.85 103.29 429.42 93.72 429.42 21.7 459.51 21.7 469.08 12.13 459.51 2.56 380.2 2.56 370.63 12.13 380.2 21.7 410.28 21.7 410.28 93.72"/>
+                </g>
+                <g class="letter_e">
+                    <polygon class="cls-1" points="587.89 2.56 513.31 2.56 494.17 21.7 587.89 21.7 587.89 2.56"/>
+                    <rect class="cls-1" x="494.17" y="44.14" width="93.72" height="19.14"/>
+                    <polygon class="cls-1" points="587.89 103.29 587.89 84.15 494.17 84.15 513.31 103.29 587.89 103.29"/>
+                </g>
+                <g class="letter_c">
+                    <polygon class="cls-1" points="811.77 .24 802.2 9.81 802.2 39.33 760.39 39.33 760.39 9.81 750.82 .24 741.25 9.81 741.25 103.29 760.39 84.15 760.39 58.47 802.2 58.47 802.2 84.15 802.2 84.15 802.2 84.15 821.34 103.29 821.34 39.33 821.34 9.81 811.77 .24"/>
+                </g>
+                <g class="letter_h">
+                    <polygon class="cls-1" points="711.43 21.7 692.3 2.56 617.71 2.56 617.71 6.85 617.71 21.7 617.71 84.15 617.71 100.58 617.71 103.29 692.3 103.29 711.43 84.15 636.85 84.15 636.85 21.7 711.43 21.7"/>
+                </g>
+            </svg>
         </a>
-        <!--the header buttons-->
 
         <nav class="center_nav">
-            <a href="index.html">Home</a>
-            <a href="product.html">Product</a>
-            <a href="service.html">Service</a>
-            <a href="about.html">About us</a>
+            <a href="/" onclick="navigateTo('home', event); return false;" data-page="home" class="active">Home</a>
+            <a href="/product" onclick="navigateTo('product', event); return false;" data-page="product">Product</a>
+            <a href="/service" onclick="navigateTo('service', event); return false;" data-page="service">Service</a>
+            <a href="/about" onclick="navigateTo('about', event); return false;" data-page="about">About us</a>
         </nav>
     </header>
 
+    <!-- Mobile Navigation -->
     <div class="shadow"></div>
     <button class="right_nav" onclick="toggle()">
         <span></span>
@@ -85,42 +65,495 @@
         <span></span>
     </button>
     <nav class="mobile_nav">
-            <a href="index.html">Home</a>
-            <a href="product.html">Product</a>
-            <a href="service.html">Service</a>
-            <a href="about.html">About us</a>
+        <a href="/" onclick="navigateTo('home', event); toggle(); return false;" data-page="home">Home</a>
+        <a href="/product" onclick="navigateTo('product', event); toggle(); return false;" data-page="product">Product</a>
+        <a href="/service" onclick="navigateTo('service', event); toggle(); return false;" data-page="service">Service</a>
+        <a href="/about" onclick="navigateTo('about', event); toggle(); return false;" data-page="about">About us</a>
     </nav>
 
-    <section style="background-image: url('images/Home1.jpg')">
-        <div class="content-outer">
-            <div class="content">
-                <h3>ETYTECH</h3>
-                <h2>Industry Intelligence Promoter</h2>
-                <a href=""><span>Learn more</span></a>
+    <!-- Page Container -->
+    <div id="page-container">
+        
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page-content active">
+            <section style="background-image: url('images/Home1.jpg')">
+                <div class="content-outer">
+                    <div class="content">
+                        <h3>ETYTECH</h3>
+                        <h2>Industry Intelligence Promoter</h2>
+                        <a href="/about" onclick="navigateTo('about', event); return false;"><span>Learn more</span></a>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background-image: url('images/Home2.jpg')">
+                <div class="content-outer">
+                    <div class="content">
+                        <h3>Artificial intelligence & Big Data</h3>
+                        <h2>Intellectualized Education</h2>
+                        <a href="/product" onclick="navigateTo('product', event); return false;"><span>Learn more</span></a>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background-image: url('images/Home3.jpg')">
+                <div class="content-outer">
+                    <div class="content">
+                        <h3>Software & Hardware</h3>
+                        <h2>Customize Development</h2>
+                        <a href="/service" onclick="navigateTo('service', event); return false;"><span>Learn more</span></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PRODUCT PAGE -->
+        <div id="product-page" class="page-content">
+            <!-- AI Module Section -->
+            <div class="module-container" id="ai-module">
+                <section class="module-title-section">
+                    <div class="title-content">
+                        <h1 class="glitch" data-text="Artificial Intelligence">Artificial Intelligence</h1>
+                        <div class="title-decoration">
+                            <span class="pulse-dot"></span>
+                            <span class="pulse-dot"></span>
+                            <span class="pulse-dot"></span>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator">
+                        <span>Scroll to explore</span>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                </section>
+
+                <!-- Cherry Studio -->
+                <section class="content-section cherry-section">
+                    <div class="content-wrapper layout-diagonal">
+                        <div class="text-area">
+                            <div class="product-number">01</div>
+                            <h2 class="product-title">
+                                <span class="cherry-icon">🍒</span> Cherry Studio
+                            </h2>
+                            <p class="product-description">
+                                Cherry Studio is a desktop client that supports for multiple LLM providers like ChatGPT, Gemini, DeepSeek. Together with other developers, we successfully completed this project and we are truly proud of our role in advancing AI and making it easier for more people to benefit from it.
+                            </p>
+                            <div class="tech-tags">
+                                <span>AI Integration</span>
+                                <span>Desktop App</span>
+                                <span>Multi-LLM</span>
+                            </div>
+                        </div>
+                        <div class="image-area">
+                            <div class="image-carousel">
+                                <div class="main-image">
+                                    <img src="images/Cherry1.jpg" alt="Cherry Studio Main" class="active">
+                                </div>
+                                <div class="image-grid">
+                                    <img src="images/Cherry2.png" alt="Cherry Studio Feature 1" class="thumbnail">
+                                    <img src="images/Cherry3.png" alt="Cherry Studio Feature 2" class="thumbnail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SE Agent -->
+                <section class="content-section se-agent-section">
+                    <div class="content-wrapper layout-split">
+                        <div class="image-area">
+                            <div class="image-stack">
+                                <img src="images/Se1.png" alt="SE Agent Architecture" class="stack-image back">
+                                <img src="images/Se2.jpg" alt="SE Agent Flow" class="stack-image front">
+                            </div>
+                        </div>
+                        <div class="text-area">
+                            <div class="product-number">02</div>
+                            <h2 class="product-title">SE Agent</h2>
+                            <div class="title-underline"></div>
+                            <p class="product-description">
+                                SE-Agent is a self-evolution framework that enables information exchange between reasoning paths through a trajectory-level evolution mechanism, breaking the cognitive limitations of single trajectories.
+                            </p>
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <span class="feature-icon">→</span>
+                                    <span>Self-Evolution Framework</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">→</span>
+                                    <span>Trajectory-Level Evolution</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">→</span>
+                                    <span>Breaking Cognitive Limitations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Website Module Section -->
+            <div class="module-container" id="website-module">
+                <section class="module-title-section website-title">
+                    <div class="title-content">
+                        <div class="browser-frame">
+                            <div class="browser-bar">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                                <div class="browser-url">www.etytech.com/website</div>
+                            </div>
+                            <h1 class="typewriter-title">Website Development</h1>
+                        </div>
+                        <div class="code-decoration">
+                            <span class="code-line">&lt;/&gt;</span>
+                            <span class="code-line">{...}</span>
+                            <span class="code-line">#CSS</span>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator">
+                        <span>Discover Projects</span>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                </section>
+
+                <!-- SCIID Website -->
+                <section class="content-section sciid-section">
+                    <div class="content-wrapper layout-showcase">
+                        <div class="showcase-header">
+                            <h2 class="showcase-title">Official website of Guangdong South China Industrial Design Institute</h2>
+                            <div class="showcase-subtitle">SCIID</div>
+                        </div>
+                        <div class="showcase-body">
+                            <div class="showcase-images">
+                                <div class="device-mockup desktop">
+                                    <div class="device-frame">
+                                        <img src="images/SCIID1.png" alt="SCIID Desktop View">
+                                    </div>
+                                </div>
+                                <div class="device-mockup tablet">
+                                    <div class="device-frame">
+                                        <img src="images/SCIID2.png" alt="SCIID Tablet View">
+                                    </div>
+                                </div>
+                                <div class="device-mockup mobile">
+                                    <div class="device-frame">
+                                        <img src="images/SCIID3.png" alt="SCIID Mobile View">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="showcase-info">
+                                <p class="showcase-description">
+                                    The official static website of the Guangdong South China Industrial Design Institute (SCIID) is designed to present the institute's service offerings and representative project cases in a professional and engaging manner. Built with a responsive design that adapts seamlessly to different devices and screen sizes, the site leverages modern front-end technologies such as HTML5, CSS3, and JavaScript to ensure optimized performance and fast loading speed.
+                                </p>
+                                <div class="tech-stack">
+                                    <div class="tech-item">HTML5</div>
+                                    <div class="tech-item">CSS3</div>
+                                    <div class="tech-item">JavaScript</div>
+                                    <div class="tech-item">Responsive</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCNU Platform -->
+                <section class="content-section scnu-section">
+                    <div class="content-wrapper layout-cards">
+                        <div class="cards-header">
+                            <h2 class="cards-title">University Integrated Service Platform</h2>
+                            <div class="cards-subtitle">South China Normal University</div>
+                        </div>
+                        <div class="cards-body">
+                            <div class="description-card">
+                                <div class="card-icon">🎓</div>
+                                <p class="card-description">
+                                    We develop the online service platform for our university -- South China Normal University (SCNU), enabling students to sign in, submit comprehensive evaluations, book appointments, and track progress, while providing reviewers and administrators with efficient tools for task management, role-based access control, and data dashboards.
+                                </p>
+                                <div class="platform-features">
+                                    <div class="feature-card">
+                                        <span class="feature-number">01</span>
+                                        <span>Student Portal</span>
+                                    </div>
+                                    <div class="feature-card">
+                                        <span class="feature-number">02</span>
+                                        <span>Admin Dashboard</span>
+                                    </div>
+                                    <div class="feature-card">
+                                        <span class="feature-number">03</span>
+                                        <span>SSO Integration</span>
+                                    </div>
+                                    <div class="feature-card">
+                                        <span class="feature-number">04</span>
+                                        <span>Data Analytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screenshots-grid">
+                                <div class="screenshot-card floating">
+                                    <img src="images/SCNU1.png" alt="SCNU Platform Dashboard">
+                                    <div class="card-label">Dashboard View</div>
+                                </div>
+                                <div class="screenshot-card floating delay">
+                                    <img src="images/SCNU2.png" alt="SCNU Platform Interface">
+                                    <div class="card-label">User Interface</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Capstone Education Platform -->
+                <section class="content-section capstone-section">
+                    <div class="content-wrapper layout-timeline">
+                        <div class="timeline-header">
+                            <h2 class="timeline-title">Capstone Education Platform</h2>
+                            <div class="timeline-subtitle">Guangzhou Capstone Education</div>
+                        </div>
+                        <div class="timeline-body">
+                            <div class="timeline-content">
+                                <div class="timeline-description">
+                                    <p>
+                                        We developed a customized online platform for Guangzhou Capstone Education that streamlined their teaching model, reduced labor costs, and enhanced student efficiency. The platform integrates key features for international test prep (TOEFL, IELTS, SAT), including mock exams, vocabulary practice, automatic question updates, and data-driven learning analysis.
+                                    </p>
+                                </div>
+                                <div class="timeline-features">
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon">📚</div>
+                                        <div class="timeline-info">
+                                            <h4>Mock Exams</h4>
+                                            <p>TOEFL, IELTS, SAT simulation</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon">📝</div>
+                                        <div class="timeline-info">
+                                            <h4>Vocabulary Practice</h4>
+                                            <p>Intelligent word learning system</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon">🔄</div>
+                                        <div class="timeline-info">
+                                            <h4>Auto Updates</h4>
+                                            <p>Question bank synchronization</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon">📊</div>
+                                        <div class="timeline-info">
+                                            <h4>Data Analysis</h4>
+                                            <p>Learning progress tracking</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-images">
+                                <div class="image-showcase">
+                                    <div class="showcase-main">
+                                        <img src="images/Capstone2.png" alt="Capstone Main Platform" class="main-showcase-img">
+                                    </div>
+                                    <div class="showcase-secondary">
+                                        <img src="images/Capstone1.png" alt="Capstone Dashboard" class="secondary-img">
+                                        <img src="images/Capstone3.png" alt="Capstone Features" class="secondary-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- One More Thing Module -->
+            <div class="module-container" id="onemorething-module">
+                <section class="module-title-section onemorething-title">
+                    <div class="title-content">
+                        <h1 class="strikethrough-title">
+                            <span class="strike-text">One</span> More Thing<span class="dots">...</span>
+                        </h1>
+                        <p class="title-tagline">A big step for small</p>
+                    </div>
+                    <div class="scroll-indicator">
+                        <span>Explore More</span>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                </section>
+
+                <!-- WeChat Bot + AR Edu Game -->
+                <section class="content-section dual-products-section">
+                    <div class="content-wrapper layout-dual">
+                        <div class="product-card">
+                            <div class="card-header">
+                                <div class="product-number">01</div>
+                                <h2 class="product-title">WeChat Bot</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-image">
+                                    <img src="images/WeChatBot.png" alt="WeChat Bot">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <p class="product-description">
+                                    A custom WeChat plugin designed for bulk commercial email distribution. It features automatic keyword extraction and batch sending capabilities.
+                                </p>
+                                <div class="tech-highlights">
+                                    <span>Keyword Extraction</span>
+                                    <span>Batch Sending</span>
+                                    <span>WeChat Integration</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="card-header">
+                                <div class="product-number">02</div>
+                                <h2 class="product-title">AR Edu Game</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="product-image">
+                                    <img src="images/ARGame.JPG" alt="AR Educational Game">
+                                    <div class="image-overlay"></div>
+                                </div>
+                                <p class="product-description">
+                                    An AR-based educational game for children aged 6–10, developed with Unity and the Vuforia plugin. The game integrates multiple subjects into interactive, immersive learning experiences.
+                                </p>
+                                <div class="tech-highlights">
+                                    <span>Unity Engine</span>
+                                    <span>Vuforia AR</span>
+                                    <span>Educational</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data-driven Work Out -->
+                <section class="content-section workout-section">
+                    <div class="content-wrapper layout-fullwidth">
+                        <div class="fullwidth-card">
+                            <div class="card-header-large">
+                                <div class="product-number">03</div>
+                                <h2 class="product-title-large">Data-driven Work Out</h2>
+                                <div class="title-underline-large"></div>
+                            </div>
+                            <div class="card-content-split">
+                                <div class="content-left">
+                                    <p class="product-description-large">
+                                        A companion WeChat program for my school gym, offering personalized training plan creation and workout management. The platform leverages data analytics to provide customized fitness recommendations and track progress over time.
+                                    </p>
+                                    <div class="feature-grid">
+                                        <div class="feature-box">
+                                            <span class="feature-icon">💪</span>
+                                            <h4>Personalized Plans</h4>
+                                            <p>Custom training programs</p>
+                                        </div>
+                                        <div class="feature-box">
+                                            <span class="feature-icon">📊</span>
+                                            <h4>Progress Tracking</h4>
+                                            <p>Data-driven insights</p>
+                                        </div>
+                                        <div class="feature-box">
+                                            <span class="feature-icon">🎯</span>
+                                            <h4>Goal Management</h4>
+                                            <p>Achieve fitness targets</p>
+                                        </div>
+                                        <div class="feature-box">
+                                            <span class="feature-icon">📱</span>
+                                            <h4>WeChat Integration</h4>
+                                            <p>Seamless mobile access</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-right">
+                                    <div class="image-comparison">
+                                        <div class="comparison-image primary">
+                                            <img src="images/WorkOut3.JPG" alt="Workout Dashboard">
+                                            <div class="image-label">Program</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section> 
 
+        <!-- SERVICE PAGE -->
+        <div id="service-page" class="page-content">
+            <section class="fullscreen-section" style="background-image: url('images/Service1.jpg')">
+                <div class="service-content">
+                    <h3>Website Customization Services</h3>
+                    <p>
+                        Whether you are an individual, an organization, or a company, we are dedicated to providing tailored website customization services. Based on your specific needs, we deliver one-stop development — from website design and appearance to full functionality.
+                    </p>
+                </div>
+            </section>
 
-    <section style="background-image: url('images/Home2.jpg')">
-        <div class="content-outer">
-            <div class="content">
-                <h3>Artificial intelligence & Big Data</h3>
-                <h2>Intellectualized Education</h2>
-                <a href=""><span>Learn more</span></a>
-            </div>
+            <section class="fullscreen-section" style="background-image: url('images/Service2.jpg')">
+                <div class="service-content">
+                    <h3>Software Customization Services</h3>
+                    <p>
+                        We provide software development support according to your needs. From applications to small-scale tools, our team can help you improve efficiency and enhance user experience. We focus on delivering practical, flexible, and easy-to-use solutions that fit your business in a cost-effective way.
+                    </p>
+                </div>
+            </section>
+
+            <section class="fullscreen-section" style="background-image: url('images/Service3.jpg')">
+                <div class="service-content">
+                    <h3>Hardware Customization Services</h3>
+                    <p>
+                        For hardware, we offer limited but reliable customization support. Whether it's small embedded devices, basic IoT applications, or hardware prototypes, we assist you in turning ideas into workable products. Our goal is not to compete with large-scale manufacturers, but to provide accessible, hands-on solutions.
+                    </p>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <section style="background-image: url('images/Home3.jpg')">
-        <div class="content-outer">
-            <div class="content">
-                <h3>Software & Hardware</h3>
-                <h2>Customize Development</h2>
-                <a href=""><span>Learn more</span></a>
-            </div>
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="page-content">
+            <section class="about-story-section" style="background-image: url('images/about1.jpg')">
+                <div class="about-content-wrapper">
+                    <div class="founders-avatars">
+                        <div class="founder-avatar">
+                            <a href="https://yijunmiao.tech" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Ethan_Miao.PNG" alt="Ethan Miao">
+                            </a>
+                            <h3>Ethan Miao</h3>
+                            <p>Co-Founder & CMO</p>
+                        </div>
+                        <div class="founder-avatar">
+                            <a href="http://ericguo1019.com" target="_blank" rel="noopener noreferrer">
+                                <img src="images/Eric_Guo.PNG" alt="Eric Guo">
+                            </a>
+                            <h3>Eric Guo</h3>
+                            <p>Co-Founder & CTO</p>
+                        </div>
+                    </div>
+
+                    <div class="story-content">
+                        <h2>OUR STORY</h2>
+                        <p>
+                            In 2022, we started the ETYTECH to disrupt the current state of the development industry, which is often burdened by high entry barriers, non-transparent pricing, and outdated solutions, and by leveraging the power of code, we empower businesses across industries to improve efficiency and deliver better services to their customers. Our two founders have a clear division of roles: Ethan focuses on product marketing and client engagement, having earned a Master's degree in Technology Management, while Eric, who is currently pursuing a PhD in Artificial Intelligence, leads the technical team in executing development projects with innovation and precision.
+                        </p>
+                        <p>
+                            We believe that every company—and even every individual—should have the opportunity to enjoy the benefits of technology, and this vision drives our continuous effort to make advanced solutions more accessible, efficient, and enjoyable.
+                        </p>
+                    </div>
+
+                    <div class="founders-signatures">
+                        <div class="signature">
+                            <img src="images/Ethan_Signature.jpg" alt="Ethan's Signature">
+                        </div>
+                        <div class="signature">
+                            <img src="images/Eric_Signature.png" alt="Eric's Signature">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+
+    </div>
+
+    <!-- Footer -->
     <footer>
         <nav>
             <span>ETYTECH &copy; 2024</span>
@@ -131,9 +564,8 @@
             <a href="">PRIVACY POLICY</a>
         </nav>
     </footer>
+
+    <!-- Scripts -->
     <script src="js/script.js"></script>
 </body>
-
-
-
 </html>

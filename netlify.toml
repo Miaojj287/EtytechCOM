@@ -1,0 +1,26 @@
+# Netlify 配置文件
+# 用于支持单页应用 (SPA) 的路由
+
+[build]
+  publish = "."
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 可选：优化构建设置
+[build.processing]
+  skip_processing = false
+  
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.images]
+  compress = true
+

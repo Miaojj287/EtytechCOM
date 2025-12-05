@@ -1,0 +1,6 @@
+# Netlify Redirects 配置文件
+# 用于支持单页应用 (SPA) 的路由
+
+# 将所有非文件请求重定向到 index.html（保持URL不变）
+/*    /index.html   200
+
