@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // GitHub Pages SPA 路由解决方案
+        // 当用户直接访问或刷新子路由（如 /about）时，
+        // GitHub Pages 会显示这个 404 页面，
+        // 这个脚本会将用户重定向到 index.html 并保留路径信息
+
+        // 获取当前完整路径（包括 hash 和 search）
+        var path = window.location.pathname + window.location.search + window.location.hash;
+
+        // 重定向到根路径，并将原路径作为参数传递
+        // 注意：这里使用 sessionStorage 来传递路径，避免 URL 混乱
+        sessionStorage.setItem('redirect', path);
+
+        // 立即重定向到 index.html
+        window.location.replace(window.location.origin + '/');
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .loader {
+            text-align: center;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 300;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <h1>Redirecting...</h1>
+    </div>
+</body>
+
+</html>

@@ -186,7 +186,33 @@ document.addEventListener('DOMContentLoaded', function () {
 // Router Initialization
 // ==========================================
 function initializeRouter() {
-  // 从URL路径确定初始页面
+  // 检查是否从 404.html 重定向过来（GitHub Pages SPA 支持）
+  const redirectPath = sessionStorage.getItem('redirect');
+  if (redirectPath) {
+    sessionStorage.removeItem('redirect');
+    // 使用重定向的路径
+    const cleanPath = redirectPath.replace(/^\//, '').replace(/\.html$/, '').split('?')[0].split('#')[0];
+    const validPages = ['home', 'product', 'service', 'about'];
+    if (validPages.includes(cleanPath)) {
+      // 先隐藏home页面
+      document.getElementById('home-page').classList.remove('active');
+      // 显示目标页面
+      const targetPage = document.getElementById(`${cleanPath}-page`);
+      if (targetPage) {
+        targetPage.classList.add('active');
+        currentPage = cleanPath;
+        updateNavigation(cleanPath);
+        updatePageTitle(cleanPath);
+        
+        // 更新历史记录
+        const newPath = cleanPath === 'home' ? '/' : `/${cleanPath}`;
+        history.replaceState({ page: cleanPath }, '', newPath);
+      }
+      return;
+    }
+  }
+  
+  // 正常的路由初始化逻辑
   const path = window.location.pathname;
   let initialPage = 'home';
   
